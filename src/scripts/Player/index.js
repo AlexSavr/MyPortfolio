@@ -1,5 +1,6 @@
 import player from '../../assets/Player/player.png';
 import _animations from './components/animations';
+import _controls from './components/controls'
 
 class Player {
     constructor(scene) {
@@ -15,9 +16,14 @@ class Player {
     create() {
         _animations(this._scene, this.frameRate);
 
-        this.player = this._scene.add.sprite(600, 370);
-        this.player.setScale(1);
+        this.player = this._scene.physics.add.sprite(600, 370);
+        this.player.setCollideWorldBounds(true);
         this.player.play('walkRightBottom');
+
+        _controls(this._scene, this.player, 80);
+    }
+
+    update() {
     }
 }
 
