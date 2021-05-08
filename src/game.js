@@ -24,18 +24,12 @@ class Game extends Phaser.Scene {
 
     create ()
     {
-        this.physics.world.setBounds(0, 0, 1280, 720);
-
+        this.cameras.main.setBounds(0, 0, 2048, 2048);
+        this.physics.world.setBounds(0, 0, 2048, 2048);
         this.grass.create();
-        // this.add.tileSprite(709.5, 129, 1280, 129, 'block');
-        // this.add.tileSprite(640, 180, 1280, 129, 'block');
-        // this.add.tileSprite(709, 230, 1280, 129, 'block');
-        // this.add.tileSprite(640, 282, 1280, 129, 'block');
-        // this.add.tileSprite(709.5, 333, 1280, 129, 'block');
-        // this.add.tileSprite(640, 384, 1280, 129, 'block');
-        // this.add.tileSprite(709, 435, 1280, 129, 'block');
-
         this.player.create();
+
+        this.cameras.main.startFollow(this.player.player, true, 0.2, 0.2);
     }
 
     update() {
