@@ -32,7 +32,8 @@ class Ground {
                 x = this.startX + (this.size / 2);
             }
 
-            this._scene.add.tileSprite(x, y, width, height, this.name);
+            let tile = this._scene.add.tileSprite(x, y, width, height, this.name);
+            tile.setOrigin(0, 0.5);
         }
     }
 }
