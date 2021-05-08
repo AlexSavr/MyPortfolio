@@ -64,4 +64,32 @@ function _animations(scene, frameRate) { // TODO: Refactor
         repeat: -1
     });
 
+    // Stop animation
+    scene.anims.create({
+        key: 'stopTop',
+        frames: scene.anims.generateFrameNumbers('player', { frames: [ 242 ] }),
+        frameRate,
+        repeat: 1
+    });
+
+    scene.anims.create({
+        key: 'stopDown',
+        frames: scene.anims.generateFrameNumbers('player', { frames: [ 247 ] }),
+        frameRate,
+        repeat: 1
+    });
+
+    scene.anims.create({
+        key: 'stopLeft',
+        frames: scene.anims.generateFrameNumbers('player', { frames: [ 244 ] }),
+        frameRate,
+        repeat: 1
+    });
+
+    scene.anims.create({
+        key: 'stopRight',
+        frames: scene.anims.generateFrameNumbers('player', { frames: [ 240 ] }),
+        frameRate,
+        repeat: 1
+    });
 }

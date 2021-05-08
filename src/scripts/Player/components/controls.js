@@ -15,7 +15,7 @@ export function _controls(player, speed) {
             case 65: keyboard.left = true;  player.setVelocityX(-currentSpeed); break;
             case 68: keyboard.right = true; player.setVelocityX(currentSpeed); break;
         }
-        changeAnimation(player, 'keydown');
+        changeAnimation(player, event);
       });
       
     document.addEventListener('keyup', function (event) {
@@ -25,7 +25,7 @@ export function _controls(player, speed) {
             case 65: keyboard.left = false; player.setVelocityX(0); break;
             case 68: keyboard.right = false; player.setVelocityX(0); break;
         }
-        changeAnimation(player, 'keyup');
+        changeAnimation(player, event);
     });
 }
 
@@ -36,8 +36,8 @@ export function _controlsUpdate() {
     keysCount += keyboard.right ? 1 : 0;
 }
 
-function changeAnimation(player, action) { // TODO: Fix bugs with walk
-    switch(action) {
+function changeAnimation(player, event) { // TODO: Fix bugs with walk
+    switch(event.type) {
         case 'keydown': {
             if(keyboard.up && keyboard.left) player.play('walkLeftTop', true);
             if(keyboard.up && keyboard.right) player.play('walkRightTop', true);
@@ -59,17 +59,13 @@ function changeAnimation(player, action) { // TODO: Fix bugs with walk
             player.stop();
             if(Object.values(keyboard).find(el => el === true))
                 changeAnimation(player, 'keydown');
-            else { // TODO: Play stop animation
-                player.stop();
-                // if(keyboard.up && keyboard.left) player.play('walkLeftTop', true);
-                // if(keyboard.up && keyboard.right) player.play('walkRightTop', true);
-                // if(keyboard.down && keyboard.left) player.play('walkLeftDown', true);
-                // if(keyboard.down && keyboard.right) player.play('walkRightDown', true);
-                
-                // if(keyboard.up) player.play('walkTop', true);
-                // if(keyboard.down) player.play('walkDown', true);
-                // if(keyboard.left) player.play('walkLeft', true);
-                // if(keyboard.right) player.play('walkRight', true);
+            else { // TODO: Play stop animation for corner animation
+                switch(event.code) {
+                    case 'KeyW': player.play('stopTop'); break;
+                    case 'KeyS': player.play('stopDown'); break;
+                    case 'KeyA': player.play('stopLeft'); break;
+                    case 'KeyD': player.play('stopRight'); break;
+                }
             }
             break;
         }

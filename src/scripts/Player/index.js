@@ -19,7 +19,7 @@ class Player {
 
         this.player = this._scene.physics.add.sprite(600, 370);
         this.player.setCollideWorldBounds(true);
-        this.player.play('walkRight');
+        this.player.play('stopRight');
 
         _controls(this.player, this.speed);
     }
