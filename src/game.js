@@ -24,12 +24,12 @@ class Game extends Phaser.Scene {
 
     create ()
     {
-        this.cameras.main.setBounds(0, 0, 2048, 2048);
+        this.cameras.main.setBounds(-500, -500, 2048, 2048);
         this.physics.world.setBounds(0, 0, 2048, 2048);
         this.grass.create();
         this.player.create();
 
-        this.cameras.main.startFollow(this.player.player, true, 0.2, 0.2);
+        this.cameras.main.startFollow(this.player.model, true, 0.2, 0.2);
     }
 
     update() {

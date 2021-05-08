@@ -1,7 +1,7 @@
 var keyboard = { up: false, down: false, left: false, right: false };
 var keysCount = 0;
 
-export function _controls(player, speed) {
+export function _controls(player, speed, onPlayerMove = () => {}) {
     var currentSpeed = speed;
 
     if (keysCount > 1) {
@@ -16,6 +16,8 @@ export function _controls(player, speed) {
             case 68: keyboard.right = true; player.setVelocityX(currentSpeed); break;
         }
         changeAnimation(player, event);
+
+        onPlayerMove({ isMove: true, x: player.x, y: player.y });
       });
       
     document.addEventListener('keyup', function (event) {
@@ -25,7 +27,10 @@ export function _controls(player, speed) {
             case 65: keyboard.left = false; player.setVelocityX(0); break;
             case 68: keyboard.right = false; player.setVelocityX(0); break;
         }
+
         changeAnimation(player, event);
+
+        onPlayerMove({ isMove: false, x: player.x, y: player.y });
     });
 }
 
