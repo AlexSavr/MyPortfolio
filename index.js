@@ -11,4 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const game = new Phaser.Game(gameConfig);
+
+    window.addEventListener('resize', () => {
+        game.scale.setGameSize(window.innerWidth, window.innerHeight);
+    });
 })
