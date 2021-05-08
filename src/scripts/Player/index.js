@@ -1,12 +1,13 @@
 import player from '../../assets/Player/player.png';
 import _animations from './components/animations';
-import _controls from './components/controls'
+import _controls, { _controlsUpdate } from './components/controls'
 
 class Player {
     constructor(scene) {
         this.player = null;
         this._scene = scene;
         this.frameRate = 10;
+        this.speed = 90;
     }
 
     init() {
@@ -18,12 +19,13 @@ class Player {
 
         this.player = this._scene.physics.add.sprite(600, 370);
         this.player.setCollideWorldBounds(true);
-        this.player.play('walkRightBottom');
+        this.player.play('walkRight');
 
-        _controls(this._scene, this.player, 80);
+        _controls(this.player, this.speed);
     }
 
     update() {
+        _controlsUpdate();
     }
 }
 

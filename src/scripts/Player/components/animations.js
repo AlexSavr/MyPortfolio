@@ -44,21 +44,21 @@ function _animations(scene, frameRate) { // TODO: Refactor
     });
 
     scene.anims.create({
-        key: 'walkLeftBottom',
+        key: 'walkLeftDown',
         frames: scene.anims.generateFrameNumbers('player', { frames: [ 30, 31, 32, 33, 34, 35 ] }),
         frameRate,
         repeat: -1
     });
 
     scene.anims.create({
-        key: 'walkRightBottom',
+        key: 'walkRightDown',
         frames: scene.anims.generateFrameNumbers('player', { frames: [ 36, 37, 38, 39, 40, 41 ] }),
         frameRate,
         repeat: -1
     });
 
     scene.anims.create({
-        key: 'walkBottom',
+        key: 'walkDown',
         frames: scene.anims.generateFrameNumbers('player', { frames: [ 42, 43, 44, 45, 46, 47 ] }),
         frameRate,
         repeat: -1
