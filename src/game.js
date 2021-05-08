@@ -11,7 +11,7 @@ class Game extends Phaser.Scene {
             src: block,
             name: 'grass',
             startX: 620,
-            startY: 60,
+            startY: 150,
             rows: 12,
             columns: 10
         });
@@ -24,7 +24,7 @@ class Game extends Phaser.Scene {
 
     create ()
     {
-        this.cameras.main.setBounds(-500, -500, 2048, 2048);
+        this.cameras.main.setBounds(-400, -200, 2048, 2048);
         this.physics.world.setBounds(0, 0, 2048, 2048);
         this.grass.create();
         this.player.create();
