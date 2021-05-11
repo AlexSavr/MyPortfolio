@@ -35,11 +35,7 @@ class MapBuilder {
     }
 
     create() {
-        this.layerGround.map(el => {
-            el.create();
-
-            console.log(el);
-        })
+        this.layerGround.map(el => el.create())
     }
     
     calculateCountGround() {
@@ -58,7 +54,6 @@ class MapBuilder {
             for(let x = 0; x < row.length; x++) {
                 var char = row[x];
                 startX += size;
-                console.log(x);
 
                 switch(char) {
                     case 'G': this.layerGround.push(new Ground(this.scene, { frame: 4, name: 'grass_'+y+x, startX, startY })); break;

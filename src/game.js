@@ -66,8 +66,9 @@ class Game extends Phaser.Scene {
         // this.grass.create();
         this.MapBuilder.create();
         this.player.create();
+        // this.testSite = new this.Rectangle(this, 1400, 1250, 256, 128);
 
-        this.cameras.main.startFollow(this.player.model, true, 0.2, 0.2);
+        this.cameras.main.startFollow(this.player.model, true, 0.8, 0.8);
     }
 
     update() {
