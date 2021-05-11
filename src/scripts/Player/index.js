@@ -3,15 +3,15 @@ import _animations from './components/greySkinAnimation';
 import _controls, { _controlsUpdate } from './components/controls'
 
 class Player {
-    constructor(scene) {
+    constructor(scene, x, y) {
         this.model = null;
         this._scene = scene;
         this.frameRate = 10;
         this.speed = 90;
 
         this.isMove = false;
-        this.x = 0;
-        this.y = 0;
+        this.x = x || 700;
+        this.y = y || 620;
     }
 
     init() {
@@ -21,7 +21,7 @@ class Player {
     create(onPlayerMove = () => {}) {
         _animations(this._scene, this.frameRate);
 
-        this.model = this._scene.physics.add.sprite(600, 370);
+        this.model = this._scene.physics.add.sprite(this.x, this.y);
         this.model.setCollideWorldBounds(true);
         this.model.play('stopRight');
 
