@@ -4,6 +4,7 @@ import './src/styles/styles.scss';
 import Phaser from 'phaser';
 import Game from './src/game';
 
+
 document.addEventListener('DOMContentLoaded', () => {
     const gameConfig = {
         ...config,
@@ -15,4 +16,5 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', () => {
         game.scale.setGameSize(window.innerWidth, window.innerHeight);
     });
+
 })
