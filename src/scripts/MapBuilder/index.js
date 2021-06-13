@@ -56,11 +56,11 @@ class MapBuilder {
                 startX += size;
 
                 switch(char) {
-                    case 'G': this.layerGround.push(new Ground(this.scene, { frame: 4, name: 'grass_'+y+x, startX, startY })); break;
-                    case 'F': this.layerGround.push(new Ground(this.scene, { frame: 5, name: 'flowers_grass_'+y+x, startX, startY })); break;
-                    case 'D': this.layerGround.push(new Ground(this.scene, { frame: 7, name: 'grass2_'+y+x, startX, startY })); break;
-                    case 'S': this.layerGround.push(new Ground(this.scene, { frame: 16, name: 'stone_'+y+x, startX, startY })); break;
-                    case 'R': this.layerGround.push(new Ground(this.scene, { frame: 15, name: 'rock_'+y+x, startX, startY })); break;
+                    case 'G': this.layerGround.push(new Ground(this.scene, { frame: 4, name: 'grass', startX, startY })); break;
+                    case 'F': this.layerGround.push(new Ground(this.scene, { frame: 5, name: 'flowers_grass', startX, startY })); break;
+                    case 'D': this.layerGround.push(new Ground(this.scene, { frame: 7, name: 'grass2', startX, startY })); break;
+                    case 'S': this.layerGround.push(new Ground(this.scene, { frame: 16, name: 'stone', startX, startY })); break;
+                    case 'R': this.layerGround.push(new Ground(this.scene, { frame: 15, name: 'rock', startX, startY })); break;
                 }
             }
         }
