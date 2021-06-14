@@ -34,6 +34,7 @@ class Player {
 
     update() {
         _controlsUpdate();
+        // console.log(this.x, this.y);
     }
 }
 

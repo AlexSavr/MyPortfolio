@@ -6,15 +6,6 @@ D - grass second
 F - grass + flowers
 S - stone
 R - stone type 2
-Test map:
-{[
-    'GGGGG ',
-    'GGGDG ',
-    'SSRSS ',
-    'GGSSR ',
-    'GGGGG '
-]}
-
 */
 
 
