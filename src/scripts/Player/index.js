@@ -1,6 +1,7 @@
 import player from '../../assets/Player/player.png';
 import _animations from './components/greySkinAnimation';
 import _controls, { _controlsUpdate } from './components/controls'
+import actionWatchUpdate, { actionWatchInit } from './components/actionWatch';
 
 class Player {
     constructor(scene, x, y) {
@@ -30,10 +31,14 @@ class Player {
             this.x = x; 
             this.y = y; 
         });
+
+        actionWatchInit();
     }
 
     update() {
         _controlsUpdate();
+
+        actionWatchUpdate(this.x, this.y);
         // console.log(this.x, this.y);
     }
 }
