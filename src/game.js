@@ -10,42 +10,7 @@ class Game extends Phaser.Scene {
     constructor() {
         super();
 
-        // this.player = new Player(this, 1000, 1200);
-        this.player = new Player(this, 2689, 1902);
-        // this.MapBuilder = new MapBuilder(this, {
-        //     ground: [
-        //         'GGGGGGGGGGGGG',
-        //         'GGGGGGGGDGGGG',
-        //         'GGGGGGGGGGGGG',
-        //         'GGGGGGGGGDGGG',
-        //         'GGGDGGGGGGGGG',
-        //         'GGGGGFGGGGGGG',
-        //         'GGGGGDGGGGGGG',
-        //         'GGGGGGGGGGGGG',
-        //         'GGGGGGGGGGGGG',
-        //         'GGGGGSSSGGGGG',
-        //         'GGGGSSSSSGGDG',
-        //         'GGGGSSSSSSGGG',
-        //         'GGGGSSSSSSGGG',
-        //         'GGGGGGGGSSGGG',
-        //         'GGGGGGGGSSGGG',
-        //         'GGGGGGGGSSGGG',
-        //         'GGGGGGGGSSGGG',
-        //         'GGGGGGDGSSGGG',
-        //         'GGGGGGGGSSGGG',
-        //         'GGGGGGGGSSGGG',
-        //         'GGGGDGGGSSGGG', 
-        //         ' GGGGGGGSSGGG',
-        //         ' GGGGGGGSSGG',
-        //         ' GGGGGGGSSGG',
-        //         ' GGGGGGGSSGG',
-        //         ' GGGGGGGSSGG',
-        //         ' GGGGGGGSSGG',
-        //         ' GGGGGGGSSGG',
-        //         ' GGGGGGGSSGG',
-        //         ' GGGGGGGSSGG',
-        //     ]
-        // });
+        this.player = new Player(this, 1175, 654);
     }
 
     preload () {

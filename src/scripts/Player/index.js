@@ -8,15 +8,23 @@ class Player {
         this.model = null;
         this._scene = scene;
         this.frameRate = 10;
-        this.speed = 90;
+        // this.speed = 90;
+        this.speed = 900;
 
         this.isMove = false;
-        this.x = x || 700;
-        this.y = y || 620;
+        this.x = x || 1175;
+        this.y = y || 654;
     }
 
     init() {
         this._scene.load.spritesheet('player', player, { frameWidth: 85, frameHeight: 170 });
+
+        document.addEventListener('keydown', function (event) {
+
+            if(event.code === "KeyO") {
+                console.log(this.x, ',', this.y, this.model);
+            }
+        });
     }
 
     create(onPlayerMove = () => {}) {

@@ -67,7 +67,6 @@ function changeAnimation(player, event) { // TODO: Fix bugs with walk
             break;
         }
         case 'keyup': {
-            console.log('test', keyboard);
             if(Object.values(keyboard).find(el => el === true))
                 changeAnimation(player, 'keydown');
             else { // TODO: Play stop animation for corner animation
