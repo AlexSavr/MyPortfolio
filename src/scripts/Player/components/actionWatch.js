@@ -1,13 +1,19 @@
 import zones from '../../../assets/zones.json';
-import showIFrame from '../../showIFrame';
+import showIFrame, { hideIFrame } from '../../showIFrame';
 
 let keyActive = false;
 let activeZone = -1;
 
 export function actionWatchInit() {
     document.addEventListener('keydown', function (event) {
+        console.log(event.code);
         if(event.code === "KeyE") {
             keyActive = true;
+        }
+
+        if(event.code === "Escape") {
+            hideIFrame();
+            activeZone = -1;
         }
     });
 

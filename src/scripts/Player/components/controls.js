@@ -10,28 +10,34 @@ export function _controls(player, speed, onPlayerMove = () => {}) {
 
     document.addEventListener('keydown', function (event) {
         switch (event.keyCode) {
-            case 87: keyboard.up = true;    player.setVelocityY(-currentSpeed); break;
-            case 83: keyboard.down = true;  player.setVelocityY(currentSpeed); break;
-            case 65: keyboard.left = true;  player.setVelocityX(-currentSpeed); break;
-            case 68: keyboard.right = true; player.setVelocityX(currentSpeed); break;
+            case 87: keyboard.up = true;    player.setVelocityY(-currentSpeed); keyDown(player, event, onPlayerMove); break;
+            case 83: keyboard.down = true;  player.setVelocityY(currentSpeed); keyDown(player, event, onPlayerMove); break;
+            case 65: keyboard.left = true;  player.setVelocityX(-currentSpeed); keyDown(player, event, onPlayerMove); break;
+            case 68: keyboard.right = true; player.setVelocityX(currentSpeed); keyDown(player, event, onPlayerMove); break;
         }
-        changeAnimation(player, event);
-
-        onPlayerMove({ isMove: true, x: player.x, y: player.y });
       });
       
     document.addEventListener('keyup', function (event) {
         switch (event.keyCode) {
-            case 87: keyboard.up = false; player.setVelocityY(0); break;
-            case 83: keyboard.down = false; player.setVelocityY(0); break;
-            case 65: keyboard.left = false; player.setVelocityX(0); break;
-            case 68: keyboard.right = false; player.setVelocityX(0); break;
+            case 87: keyboard.up = false; keyUp(player, event, onPlayerMove); break;
+            case 83: keyboard.down = false; keyUp(player, event, onPlayerMove);break;
+            case 65: keyboard.left = false; keyUp(player, event, onPlayerMove);break;
+            case 68: keyboard.right = false; keyUp(player, event, onPlayerMove); break;
         }
 
-        changeAnimation(player, event);
-
-        onPlayerMove({ isMove: false, x: player.x, y: player.y });
     });
+}
+
+function keyDown(player, event, onPlayerMove) {
+    changeAnimation(player, event);
+    onPlayerMove({ isMove: true, x: player.x, y: player.y });
+}
+
+function keyUp(player, event, onPlayerMove) {
+    player.setVelocityX(0);
+    player.setVelocityY(0);
+    changeAnimation(player, event);
+    onPlayerMove({ isMove: false, x: player.x, y: player.y });
 }
 
 export function _controlsUpdate() {
@@ -61,7 +67,7 @@ function changeAnimation(player, event) { // TODO: Fix bugs with walk
             break;
         }
         case 'keyup': {
-            player.stop();
+            console.log('test', keyboard);
             if(Object.values(keyboard).find(el => el === true))
                 changeAnimation(player, 'keydown');
             else { // TODO: Play stop animation for corner animation
@@ -72,6 +78,7 @@ function changeAnimation(player, event) { // TODO: Fix bugs with walk
                     case 'KeyD': player.play('stopRight'); break;
                 }
             }
+            player.stop();
             break;
         }
     }
