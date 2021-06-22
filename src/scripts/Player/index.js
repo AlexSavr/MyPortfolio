@@ -14,15 +14,29 @@ class Player {
         this.isMove = false;
         this.x = x || 1175;
         this.y = y || 654;
+        this.debugState = {
+            state: 0,
+            x1: 0,
+            y1: 0
+        };
     }
 
     init() {
         this._scene.load.spritesheet('player', player, { frameWidth: 85, frameHeight: 170 });
 
-        document.addEventListener('keydown', function (event) {
-
+        document.addEventListener('keydown', (event) => {
             if(event.code === "KeyO") {
-                console.log(this.x, ',', this.y, this.model);
+                if(this.debugState.state === 0) {
+                    this.debugState.x1 = this.x;
+                    this.debugState.y1 = this.y;
+
+                    this.debugState.state = 1;
+                    return;
+                } 
+                
+                
+                console.log(`{ "position": { "x1": ${this.debugState.x1}, "y1": ${this.debugState.y1}, "x2": ${this.x}, "y2": ${this.y} }, "link": ""},`);
+                this.debugState.state = 0;
             }
         });
     }

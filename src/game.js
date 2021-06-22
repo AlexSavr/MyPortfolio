@@ -25,7 +25,7 @@ class Game extends Phaser.Scene {
     }
 
     create () {
-        this.cameras.main.setBounds(-400, -200, 5700, 4796);
+        this.cameras.main.setBounds(600, 0, 5700, 4796);
         this.physics.world.setBounds(0, 0, 5100, 4096);
         let mapSprite = this.add.sprite(2800, 2500, 'Map');
 
