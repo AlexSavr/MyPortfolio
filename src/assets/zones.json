@@ -3,15 +3,15 @@
     { "position": { "x1": 2330, "y1": 399, "x2": 2630, "y2": 504 }, "link": "http://college.sava.site/media/energomaraphone/Сохраним зеленую планету (2018).avi"},
     { "position": { "x1": 2720, "y1": 159, "x2": 2975, "y2": 294 }, "link": "https://www.ngpk.by/ru/dialog/#/"},
     { "position": { "x1": 3275, "y1": 114, "x2": 3455, "y2": 369 }, "link": "https://en.wikipedia.org/wiki/HTTP_404"},
-    { "position": { "x1": 3860, "y1": 429, "x2": 3965, "y2": 699 }, "link": "https://training-apparatchik.sava.site/#/"},
-    { "position": { "x1": 4475, "y1": 804, "x2": 4580, "y2": 1059 }, "link": "https://training-apparatchik.sava.site/#/"},
-    { "position": { "x1": 4835, "y1": 1434, "x2": 4985, "y2": 1674 }, "link": "http://college.sava.site/media/energomaraphone/Сбережем себе семье стране (2020).mp4"},
-    { "position": { "x1": 4880, "y1": 1989, "x2": 5045, "y2": 2244 }, "link": "https://eor-neft.sava.site/#/"},
-    { "position": { "x1": 4835, "y1": 2514, "x2": 5090, "y2": 2769 }, "link": "https://proforient.sava.site/#/"},
-    { "position": { "x1": 4850, "y1": 3069, "x2": 5045, "y2": 3354 }, "link": "https://english.sava.site"},
-    { "position": { "x1": 4040, "y1": 3474, "x2": 4340, "y2": 3699 }, "link": "https://www.ngpk.by/ru/dialog/#/"},
-    { "position": { "x1": 3440, "y1": 3474, "x2": 3710, "y2": 3684 }, "link": "https://www.ngpk.by/ru/proekt/?page=intro"},
-    { "position": { "x1": 2795, "y1": 3459, "x2": 3125, "y2": 3654 }, "link": "http://college.sava.site/media/energomaraphone/Спасём природу вместе! (2019).avi"},
-    { "position": { "x1": 2405, "y1": 2934, "x2": 2705, "y2": 3249 }, "link": "https://english.sava.site/#/"},
-    { "position": { "x1": 2105, "y1": 2409, "x2": 2570, "y2": 2679 }, "link": "https://college.sava.site/media/интеллектуальная собственность Савров.mp4"}
+
+    { "position": { "x1": 4445, "y1": 789, "x2": 4565, "y2": 1059 }, "link": "https://eor-neft.sava.site/#/"},
+    { "position": { "x1": 4835, "y1": 1434, "x2": 4985, "y2": 1674 }, "link": "https://proforient.sava.site/#/"},
+
+    { "position": { "x1": 4835, "y1": 2514, "x2": 5090, "y2": 2769 }, "link": "https://english.sava.site"},
+
+    { "position": { "x1": 4040, "y1": 3474, "x2": 4340, "y2": 3699 }, "link": "http://college.sava.site/media/energomaraphone/Спасём природу вместе! (2019).avi"},
+    { "position": { "x1": 3440, "y1": 3474, "x2": 3710, "y2": 3684 }, "link": "https://training-apparatchik.sava.site/#/"},
+    { "position": { "x1": 2795, "y1": 3459, "x2": 3125, "y2": 3654 }, "link": "http://college.sava.site/media/интеллектуальная собственность Савров.mp4"},
+    { "position": { "x1": 2405, "y1": 2934, "x2": 2705, "y2": 3249 }, "link": "http://college.sava.site/media/energomaraphone/Сбережем себе семье стране (2020).mp4"},
+    { "position": { "x1": 2105, "y1": 2409, "x2": 2570, "y2": 2679 }, "link": "https://electrogame.sava.site"}
 ]
