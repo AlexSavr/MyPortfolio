@@ -13,11 +13,8 @@ class Player {
         this.speed = 990;
 
         this.isMove = false;
-        // this.x = x || 1175;
-        // this.y = y || 654;
-
-        this.x = 3930.5;
-        this.y = 1281;
+        this.x = x || 1175;
+        this.y = y || 600;
 
         this.debugState = {
             state: 0,

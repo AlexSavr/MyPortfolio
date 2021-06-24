@@ -12,7 +12,7 @@ class Game extends Phaser.Scene {
     constructor() {
         super();
 
-        this.player = new Player(this, 1175, 654);
+        this.player = new Player(this, 1175, 600);
     }
 
     preload () {
