@@ -9,8 +9,8 @@ class Player {
         this.model = null;
         this._scene = scene;
         this.frameRate = 10;
-        // this.speed = 90;
-        this.speed = 990;
+        this.speed = 190;
+        // this.speed = 990;
 
         this.isMove = false;
         this.x = x || 1175;
