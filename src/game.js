@@ -36,7 +36,7 @@ class Game extends Phaser.Scene {
         
         // this.MapBuilder.create();
         this.player.create();
-        drawCollision(this, { player: this.player.model });
+        // drawCollision(this, { player: this.player.model });
         this.cameras.main.startFollow(this.player.model, true, 0.8, 0.8);
 
         let tree = this.add.image(3947, 1070, 'tree4');
