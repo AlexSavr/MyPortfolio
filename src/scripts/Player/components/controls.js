@@ -19,11 +19,11 @@ export function _controls(player, speed, onPlayerMove = () => {}) {
 
         if(event.code === "KeyU") {
             currentSpeed += 100;
-            console.log('test', currentSpeed);
+            console.log('speed', currentSpeed);
         }
         if(event.code === "KeyJ") {
             currentSpeed -= 100;
-            console.log('test', currentSpeed);
+            console.log('speed', currentSpeed);
         }
 
       });

@@ -13,8 +13,12 @@ class Player {
         this.speed = 990;
 
         this.isMove = false;
-        this.x = x || 1175;
-        this.y = y || 654;
+        // this.x = x || 1175;
+        // this.y = y || 654;
+
+        this.x = 3930.5;
+        this.y = 1281;
+
         this.debugState = {
             state: 0,
             x1: 0,
@@ -55,7 +59,7 @@ class Player {
                 } 
                 
                 
-                console.log(`{ "x1": ${this.debugState.x1}, "y1": ${this.debugState.y1}, "x2": ${this.x}, "y2": ${this.y} }`);
+                console.log(`{ "x1": ${this.debugState.x1}, "y1": ${this.debugState.y1}, "x2": ${this.x}, "y2": ${this.y}, "rotation": 0 }`);
                 this.debugState.state = 0;
 
                 drawCollision(this._scene, { once: true, x1: this.debugState.x1, y1: this.debugState.y1, x2: this.x, y2: this.y });
@@ -69,6 +73,10 @@ class Player {
         this.model = this._scene.physics.add.sprite(this.x, this.y);
         this.model.setCollideWorldBounds(true);
         this.model.play('stopRight');
+
+        this.model.body.setSize(60, 18);
+        this.model.body.offset.y = 140;
+
 
         _controls(this.model, this.speed, ({ isMove, x, y }) => {
             this.isMove = isMove; 

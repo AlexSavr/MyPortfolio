@@ -6,6 +6,7 @@ import pixelArtFont from './assets/JoystixMonospace-Regular.ttf';
 import sign from './assets/UI/Sign.png';
 import map from './assets/map.png';
 import drawCollision from './scripts/Collision/drawCollision';
+import Tree4 from './assets/Trees/Tree4.svg'
 
 class Game extends Phaser.Scene {
     constructor() {
@@ -21,6 +22,8 @@ class Game extends Phaser.Scene {
 
         loadFont('pixelArtFont', pixelArtFont);
 
+        this.load.svg('tree4', Tree4);
+
         this.load.image('Sign', sign);
         this.load.image('Map', map);
     }
@@ -28,14 +31,15 @@ class Game extends Phaser.Scene {
     create () {
         this.cameras.main.setBounds(600, 0, 5700, 4796);
         this.physics.world.setBounds(0, 0, 5100, 4096);
-        let mapSprite = this.add.sprite(2800, 2500, 'Map');
-
+        
+        this.add.sprite(2800, 2500, 'Map');
+        
         // this.MapBuilder.create();
         this.player.create();
-    
+        drawCollision(this, { player: this.player.model });
         this.cameras.main.startFollow(this.player.model, true, 0.8, 0.8);
 
-        drawCollision(this);
+        let tree = this.add.image(3947, 1070, 'tree4');
     }
 
     update() {
