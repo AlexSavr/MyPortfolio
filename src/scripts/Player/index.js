@@ -2,6 +2,7 @@ import player from '../../assets/Player/player.png';
 import _animations from './components/greySkinAnimation';
 import _controls, { _controlsUpdate } from './components/controls'
 import actionWatchUpdate, { actionWatchInit } from './components/actionWatch';
+import drawCollision, { rotateTempCollision } from '../Collision/drawCollision';
 
 class Player {
     constructor(scene, x, y) {
@@ -9,7 +10,7 @@ class Player {
         this._scene = scene;
         this.frameRate = 10;
         // this.speed = 90;
-        this.speed = 900;
+        this.speed = 990;
 
         this.isMove = false;
         this.x = x || 1175;
@@ -37,6 +38,27 @@ class Player {
                 
                 console.log(`{ "position": { "x1": ${this.debugState.x1}, "y1": ${this.debugState.y1}, "x2": ${this.x}, "y2": ${this.y} }, "link": ""},`);
                 this.debugState.state = 0;
+            }
+            if(event.code === "KeyR") {
+                rotateTempCollision('+');
+            }
+            if(event.code === "KeyE") {
+                rotateTempCollision('-');
+            }
+            if(event.code === "KeyP") {
+                if(this.debugState.state === 0) {
+                    this.debugState.x1 = this.x;
+                    this.debugState.y1 = this.y;
+
+                    this.debugState.state = 1;
+                    return;
+                } 
+                
+                
+                console.log(`{ "x1": ${this.debugState.x1}, "y1": ${this.debugState.y1}, "x2": ${this.x}, "y2": ${this.y} }`);
+                this.debugState.state = 0;
+
+                drawCollision(this._scene, { once: true, x1: this.debugState.x1, y1: this.debugState.y1, x2: this.x, y2: this.y });
             }
         });
     }

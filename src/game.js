@@ -5,6 +5,7 @@ import loadFont from './scripts/loadFont';
 import pixelArtFont from './assets/JoystixMonospace-Regular.ttf';
 import sign from './assets/UI/Sign.png';
 import map from './assets/map.png';
+import drawCollision from './scripts/Collision/drawCollision';
 
 class Game extends Phaser.Scene {
     constructor() {
@@ -34,16 +35,7 @@ class Game extends Phaser.Scene {
     
         this.cameras.main.startFollow(this.player.model, true, 0.8, 0.8);
 
-
-        /* Top */
-        // this.add.sprite(900, 1000, 'Sign');
-
-        // this.add.text(900, 1000, 'AlexSavr\'s\nPortfolio', {
-        //     fontFamily: 'pixelArtFont',
-        //     color: 'white',
-        //     fontSize: '20px',
-        //     align: 'center'
-        // });
+        drawCollision(this);
     }
 
     update() {

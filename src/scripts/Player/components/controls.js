@@ -15,6 +15,17 @@ export function _controls(player, speed, onPlayerMove = () => {}) {
             case 65: keyboard.left = true;  player.setVelocityX(-currentSpeed); keyDown(player, event, onPlayerMove); break;
             case 68: keyboard.right = true; player.setVelocityX(currentSpeed); keyDown(player, event, onPlayerMove); break;
         }
+
+
+        if(event.code === "KeyU") {
+            currentSpeed += 100;
+            console.log('test', currentSpeed);
+        }
+        if(event.code === "KeyJ") {
+            currentSpeed -= 100;
+            console.log('test', currentSpeed);
+        }
+
       });
       
     document.addEventListener('keyup', function (event) {
