@@ -36,6 +36,7 @@ canvas {
 }
 
 .container-frame > iframe {
+    display: none;
     position: absolute;
     left: calc(50% - 3px);
     top: calc(50% - 2px);
@@ -43,6 +44,19 @@ canvas {
     z-index: 3;
     width: calc(97vw - 50px);
     height: calc(90vh - 48px);
+    background-color: white;
+}
+
+.container-frame > video {
+    display: none;
+    position: absolute;
+    left: calc(50% - 3px);
+    top: calc(50% - 2px);
+    transform: translate(-50% ,-50%);
+    z-index: 3;
+    width: calc(97vw - 50px);
+    height: calc(90vh - 48px);
+    background-color: white;
 }
 
 .active {

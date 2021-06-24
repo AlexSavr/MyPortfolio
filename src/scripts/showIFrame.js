@@ -11,6 +11,7 @@ function showIFrame(link) {
     }
 
     document.querySelector('.container-frame').classList.add("active");
+    document.querySelector('.container-frame > iframe').classList.add("active");
     document.querySelector('.container-frame > img').src = image;
     document.querySelector('.container-frame > iframe').src = link;
 
@@ -18,6 +19,7 @@ function showIFrame(link) {
 
 export function hideIFrame() {
     document.querySelector('.container-frame').classList.remove("active");
+    document.querySelector('.container-frame > iframe').classList.remove("active");
     document.querySelector('.container-frame > iframe').src = null;
 }
 

@@ -1,5 +1,6 @@
 import zones from '../../../assets/zones.json';
 import showIFrame, { hideIFrame } from '../../showIFrame';
+import showVideo, { hideVideo } from '../../showVideo';
 
 let keyActive = false;
 let activeZone = -1;
@@ -12,6 +13,7 @@ export function actionWatchInit() {
 
         if(event.code === "Escape") {
             hideIFrame();
+            hideVideo();
             activeZone = -1;
         }
     });
@@ -33,7 +35,17 @@ function actionWatchUpdate(x, y) {
             activeZone !== i
         ) {
             activeZone = i;
-            showIFrame(zone.link);
+            if( activeZone === 1 ||
+                activeZone === 7 ||
+                activeZone === 9 ||
+                activeZone === 10
+            ) {
+                showVideo(zone.link);
+                console.log('video');
+            } else {
+                showIFrame(zone.link);
+                console.log('frame');
+            }
         }
     })
 }
