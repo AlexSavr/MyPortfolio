@@ -5,9 +5,10 @@ In this project i use:
 - Isogenic Engine
 
 Project structure:
-+ Root Development Folder
-- ige (Engine)
-- My Portfolio
+
+    + Root Development Folder
+    +- ige (Engine)
+    +- My Portfolio
 
 Dates:
 - Apr 2019 https://www.ngpk.by/ru/proekt/?page—intro 
